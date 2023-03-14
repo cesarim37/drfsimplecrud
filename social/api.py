@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 
 from social.models import Post
-from social.serializers import UserSerializer, PostSerializer
+from social.serializers import UserSerializer, PostCreateSerializer, PostSerializer
 
 
 class UserAPIView(APIView):
@@ -25,6 +25,6 @@ class PostListAPIView(ListAPIView):
 
 
 class PostCreateAPIView(CreateAPIView):
-    serializer_class = PostSerializer
+    serializer_class = PostCreateSerializer
     permission_classes = (IsAuthenticated,)
     authentication_class = (TokenAuthentication,)

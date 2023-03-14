@@ -29,7 +29,7 @@ class UserSerializer(serializers.Serializer):
             return data
 
 
-class PostSerializer(serializers.Serializer):
+class PostCreateSerializer(serializers.Serializer):
     body = serializers.CharField()
 
     def create(self, validate_data):
@@ -40,6 +40,10 @@ class PostSerializer(serializers.Serializer):
         return instance
 
 
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = '__all__'
 
 
 class CommentSerializer(serializers.ModelSerializer):

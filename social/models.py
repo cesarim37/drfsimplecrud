@@ -7,6 +7,7 @@ class Post(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
+
 class Comment(models.Model):
     comment = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

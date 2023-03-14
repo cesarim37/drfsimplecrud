@@ -1,0 +1,45 @@
+- Crud de Projects con ViewSet
+
+http://localhost:8000/api/projects/
+
+{
+    "title": "",
+    "description": "",
+    "technology": ""
+}
+
+
+- Lista todos los post
+
+http://localhost:8000/api/post/list/
+
+
+- Crear Usuario (post)
+
+http://localhost:8000/api/create_user/
+
+{
+    "first_name": "",
+    "last_name": "",
+    "username": "",
+    "email": "",
+    "password": ""
+}
+
+
+- Generar token de autenticacion (post)
+
+http://localhost:8000/api_generate_token/
+
+{
+    "username": "",
+    "password": ""
+}
+
+
+- Crear Post, el usuario debe pasar su token (post)
+
+Headers = { "Authorization": "Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+{
+    "body": "",
+}
