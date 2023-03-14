@@ -29,10 +29,17 @@ class UserSerializer(serializers.Serializer):
             return data
 
 
-class PostSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Post
-        fields = ('body', 'author')
+class PostSerializer(serializers.Serializer):
+    body = serializers.CharField()
+
+    def create(self, validate_data):
+        instance = Post()
+        instance.body = validate_data.get('body')
+        instance.author = self.context['request'].user
+        instance.save()
+        return instance
+
+
 
 
 class CommentSerializer(serializers.ModelSerializer):
